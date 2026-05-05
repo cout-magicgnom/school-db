@@ -19,19 +19,23 @@ public class Node {
     private Node Right;
     private Node Left;
 
+    private int id;
     private float nota;
     private String nome;
 
-    public Node(float not){
+    public Node(int id1,String name,float not){
+        id = id1;
         nota = not;
-        nome = null;
+        nome = name;
         Right = null;
         Left = null;
     };
 
-    public Node() {this(-1);}
+    //GET E SET
 
-    //GET E SETS
+    //Id
+    public int getId(){return id;}
+    public void setId(int id1){id = id1;}
 
     //Nome
     public String getNome(){return nome;}
