@@ -1,6 +1,7 @@
 // arquivo: src/apl2/Node.java
 
-// TODO: Colocar a identificação dos(as) integrantes aqui.
+//Kauê Cordeiro Abreu 10741435
+//Felipe Melo 10741166
 
 package apl2;
 
@@ -15,7 +16,40 @@ package apl2;
 // {...}, retornando uma string com os valores dos atributos da classe.
 
 public class Node {
-	
-	// TODO: Implementar a classe conforme o enunciado da atividade Apl2.
-	
+    private Node Right;
+    private Node Left;
+
+    private float nota;
+    private String nome;
+
+    public Node(float not){
+        nota = not;
+        nome = null;
+        Right = null;
+        Left = null;
+    };
+
+    public Node() {this(-1);}
+
+    //GET E SETS
+
+    //Nome
+    public String getNome(){return nome;}
+    public void setNome(String name){nome = name;}
+
+    //Nota
+    public float getNota(){return nota;}
+    public void setNota(float nota1){nota = nota1;}
+
+    //Left
+
+    public Node getLeft(){return Left;}
+    public void setLeft(Node left1){Left = left1;}
+
+    //Right
+
+    public Node getRight(){return Right;}
+    public void setRight(Node right1){Right = right1;}
+
+
 }
