@@ -1,0 +1,38 @@
+NAO ALTERAR:
+
+dados.txt 
+Data
+LinkedListOriginal 
+NodeOriginal 
+
+ALTERAR PARCIALMENTE
+Main 
+
+FROM SCRATH: (do zero)
+DlinkedList 
+Node 
+Operation 
+
+
+-----------Função de cada .java-----------
+DlinkedList:
+implementar lista duplamente encadeada
+------------------------------------------
+Node:
+Implementar no da Dlinked,com base no documento. ex: 
+id pessoa,
+nome pessoa,
+parte inteira da nota...
+------------------------------------------
+Operation:
+implementacao de metodos estaticos como:
+map()
+filterRemoveNonGraded()
+filterRemoveGraded()
+...
+------------------------------------------
+Main:
+Carregar conteudo, salvar conteudo em string e incerir nos no inicio e final da lista.
+
+obs main: apenas alterar ou implementar onde aparece "TODO" em linha de comentario.
+------------------------------------------
