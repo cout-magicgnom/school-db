@@ -19,8 +19,22 @@ public class Operation {
 	 * @return Uma nova {@code DLinkedList} que contém o mapeamento da coleção de dados {@code original} para a nova estrutura usada pelo sistema de notas. 
 	 */
 	public static DLinkedList map(final LinkedListOriginal original) {
-		// TODO: Implementar o método e remover o lançamento de exceção abaixo.
-		throw new UnsupportedOperationException("Método ainda não implementado.");
+		DLinkedList list = new DLinkedList();
+		NodeOriginal aux = original.getHead();
+		float nota;
+
+		while (aux != null){
+			if ((aux.getInteiro() == 99 )|| aux.getDecimo() == 9){
+				nota = -1;
+			}else{
+				nota = aux.getInteiro() + (aux.getDecimo() / 10.0f);
+			}
+
+			list.insert(aux.getId(),aux.getNome(),nota);
+			aux = aux.getNext();
+		}
+
+		return list;
 	}
 
 	/**
@@ -33,8 +47,18 @@ public class Operation {
 	 * @return Uma nova {@code DLinkedList} que contém a coleção de dados ({@code data}) filtrada com nós que possuem apenas pessoas com notas válidas.
 	 */
 	public static DLinkedList filterRemoveNonGraded(final DLinkedList data) {
-		// TODO: Implementar o método e remover o lançamento de exceção abaixo.
-		throw new UnsupportedOperationException("Método ainda não implementado.");
+
+		Node no = data.getHead();
+		DLinkedList list = new DLinkedList();
+
+		while(no != null){
+			if((no.getNota() >= 0) && no.getNota() <= 10 ){
+				list.append(no.getId(),no.getNome(),no.getNota());
+			}
+			no = no.getRight();
+		}
+
+		return list;
 	}
 
 	/**
@@ -47,8 +71,17 @@ public class Operation {
 	 * @return Uma nova {@code DLinkedList} que contém a coleção de dados ({@code data}) filtrada com nós que possuem apenas pessoas com notas inválidas.
 	 */
 	public static DLinkedList filterRemoveGraded(final DLinkedList data) {
-		// TODO: Implementar o método e remover o lançamento de exceção abaixo.
-		throw new UnsupportedOperationException("Método ainda não implementado.");
+		Node no = data.getHead();
+		DLinkedList list = new DLinkedList();
+
+		while(no != null){
+			if((no.getNota() < 0) || no.getNota() > 10 ){
+				list.append(no.getId(),no.getNome(),no.getNota());
+			}
+			no = no.getRight();
+		}
+
+		return list;
 	}
 
 	/**
@@ -63,8 +96,17 @@ public class Operation {
 	 * @return Uma nova {@code DLinkedList} que contém a coleção de dados ({@code data}) filtrada somente com pessoas com notas maiores do que {@code average}.
 	 */
 	public static DLinkedList filterRemoveBelowAverage(final DLinkedList data, float average) {
-		// TODO: Implementar o método e remover o lançamento de exceção abaixo.
-		throw new UnsupportedOperationException("Método ainda não implementado.");
+		Node no = data.getHead();
+		DLinkedList list = new DLinkedList();
+
+		while(no != null){
+			if(no.getNota() >= average ){
+				list.append(no.getId(),no.getNome(),no.getNota());
+			}
+			no = no.getRight();
+		}
+
+		return list;
 	}
 	
 	/**
@@ -77,8 +119,17 @@ public class Operation {
 	 * @return Média das notas ({@code float}) contidas na coleção de dados ({@code data}).
 	 */
 	public static float reduce(final DLinkedList data) {
-		// TODO: Implementar o método e remover o lançamento de exceção abaixo.
-		throw new UnsupportedOperationException("Método ainda não implementado.");
+		Node no = data.getHead();
+		
+		float media = 0;
+		while(no != null){
+
+            media += no.getNota();
+
+			no = no.getRight();
+		}
+
+		return media;
 	}
 
 	/**
@@ -92,8 +143,21 @@ public class Operation {
 	 * @return {@code String} com a coleção de dados separada por ponto-e-vírgula (dados de cada pessoa) e quebras de linha (cada pessoa).
 	 */
 	public static String mapToString(final DLinkedList data) {
-		// TODO: Implementar o método e remover o lançamento de exceção abaixo.
-		throw new UnsupportedOperationException("Método ainda não implementado.");
+		Node no = data.getHead();
+		
+		String concat = "";
+		while(no != null){
+			concat +=  String.valueOf((no.getId()));
+			concat += ";";
+			concat += no.getNome();
+			concat += ";";
+			concat += String.valueOf((no.getNota()));
+			concat += "\n";
+
+			no = no.getRight();
+		}
+
+		return concat;
 	}
 
 }
