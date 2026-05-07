@@ -8,7 +8,7 @@ NodeOriginal
 ALTERAR PARCIALMENTE
 Main 
 
-FROM SCRATH: (do zero)
+FROM SCRATH: (do zero)  {Feito}
 DlinkedList 
 Node 
 Operation 
