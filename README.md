@@ -1,1 +1,1 @@
-# school-db
+# Sistema de DB legado
