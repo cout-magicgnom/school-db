@@ -1,7 +1,25 @@
+// arquivo: src/apl2/DLinkedList.java
+/*
+	* construtor
+	* metodos:
+		
+*/
 
+//Arthur Candidio Palma 10743580
+//Felipe Melo 10741166
+//Kauê Cordeiro Abreu 10741435
 
 package apl2;
 
+// -- A classe DLinkedList (que pertence ao pacote apl2) deve implementar uma
+// lista duplamente encadeada. Os nós dessa lista são do tipo [da classe] Node.
+// -- A classe deve possuir dois nós especiais, head e tail, que são
+// referências para o primeiro e último nó da lista, respectivamente.
+// -- A classe deve possuir um contador de quantos nós existem na lista.
+// -- A classe deve sobrescrever (override) o método public String toString()
+// {...}, retornando uma string com o conteúdo da lista.
+// -- A classe deve implementar as operações a seguir, respeitando o
+// comportamento descrito em cada operação.
 
 public class DLinkedList {
 	private Node head;
@@ -9,6 +27,7 @@ public class DLinkedList {
 	private int size;
 
 
+	// TODO: Implementar a classe conforme o enunciado da atividade Apl2.
 	
 	//CONSTRUTOR
 	public DLinkedList() {
@@ -93,7 +112,7 @@ public class DLinkedList {
 
 		Node aux = head;
 		while(aux != null){
-			if(aux.getId().compareTo(id) == 0){
+			if(aux.getId().equals(id)){
 				if(size == 1){
 					head = tail = null;
 				}
@@ -140,7 +159,7 @@ public class DLinkedList {
     	Node aux = head;
 
 	    while (aux != null) {
-	        if (aux.getId().compareTo(id) == 0) {
+	        if (aux.getId().equals(id)) {
 	            return aux;
 	        }
 	        aux = aux.getRight();
@@ -157,10 +176,8 @@ public class DLinkedList {
 
 // OPERAÇÃO:		isEmpty()
 	public boolean isEmpty() {
-		if(head == null){
-			return true;
-		} return false;
-	}
+        return head == null;
+    }
 
 
 // OPERAÇÃO:		clear()
@@ -175,22 +192,36 @@ public class DLinkedList {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		
-		sb.append("(" + count() + ") \n");
-		
-		Node node = head;
-		while (node != null) {
-			sb.append("(")
-			.append(node.getId())
-			.append(" ; ")
-			.append(node.getNome())
-			.append(" ; ")
-			.append(node.getNota())
-			.append(") -> \n");
-			node = node.getRight();
+
+		sb.append("(").append(this.count()).append(")\n");
+
+		for (Node node = this.head; node != null; node = node.getRight()) {
+
+			// Nó anterior
+			if (node.getLeft() == null) {
+				sb.append("null");
+			} else {
+				sb.append(node.getLeft().getId());
+			}
+
+			sb.append(" <- (")
+					.append(node.getId())
+					.append("; ")
+					.append(node.getNome())
+					.append("; ")
+					.append(node.getNota())
+					.append(") -> ");
+
+			// Próximo nó
+			if (node.getRight() == null) {
+				sb.append("null");
+			} else {
+				sb.append(node.getRight().getId());
+			}
+
+			sb.append("\n");
 		}
-		sb.append("null.");
-		
+
 		return sb.toString();
 	}
 }
