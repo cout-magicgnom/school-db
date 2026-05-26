@@ -28,7 +28,7 @@ public class Operation {
 		String data = "23.S1-";
 		while (aux != null){
 			if ((aux.getInteiro() == -1 )|| aux.getDecimo() == -1){
-				nota = -1;
+				nota = 99.9f;
 			}else{
 				nota = aux.getInteiro() + (aux.getDecimo() / 10.0f);
 			}
