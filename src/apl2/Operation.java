@@ -1,12 +1,3 @@
-//*************************** ATENÇÃO! *****************************
-// As assinaturas dos métodos desta classe não devem ser alteradas!
-//*************************** ATENÇÃO! *****************************
-// arquivo: src/apl2/Operation.java
-
-
-//Arthur Candidio Palma 10743580
-//Felipe Melo 10741166
-//Kauê Cordeiro Abreu 10741435
 
 package apl2;
 
