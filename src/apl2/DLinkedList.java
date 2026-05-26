@@ -1,13 +1,3 @@
-// arquivo: src/apl2/DLinkedList.java
-/*
-	* construtor
-	* metodos:
-		
-*/
-
-//Arthur Candidio Palma 10743580
-//Felipe Melo 10741166
-//Kauê Cordeiro Abreu 10741435
 
 package apl2;
 
