@@ -1,10 +1,3 @@
-// arquivo: src/apl2/Node.java
-
-//Arthur Candidio Palma 10743580
-//Felipe Melo 10741166
-//Kauê Cordeiro Abreu 10741435
-
-
 package apl2;
 
 // -- A classe Node (que pertence ao pacote apl2) deve conter os atributos que
